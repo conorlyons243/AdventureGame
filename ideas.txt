@@ -1,0 +1,5 @@
+1. Save/Load system (almost done)
+2. More Classes
+3. Level up system (enemies/bosses could scale with level)
+4. Bosses
+5. Story Mode
