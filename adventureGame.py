@@ -34,7 +34,7 @@ while True:
             dificulty = int(input("\nChoose your Difficulty\n1. Easy\n2. Hard\nSelect dificulty: "))
             # checks that there is not already a file with that name
             try:
-                f = open(fr"{name}.csv", "r")
+                f = open(fr"saves/{name}.csv", "r")
                 f.close()
                 print("\nA file with this name already exists")
                 # asks user if they want to overwrite existing file
@@ -42,14 +42,14 @@ while True:
                 if name == "Back" or name == "back":
                     break
                 if check == 1:
-                        f = open(fr"{name}.csv" , "w")
+                        f = open(fr"saves/{name}.csv" , "w")
                         f.close()
                         break
                 else:
                     continue
             except:
                 # if file doesn't exist, creates new one
-                f = open(fr"{name}.csv" , "w")
+                f = open(fr"saves/{name}.csv" , "w")
                 f.close()
                 break
                     
@@ -59,7 +59,7 @@ while True:
                 name = input("Enter your name: ").strip().title()
                 if name == "Back" or name == "back":
                     break
-                f = open(fr"{name}.csv", "r")
+                f = open(fr"saves/{name}.csv", "r")
                 f.close
                 break
             except:
@@ -69,7 +69,7 @@ while True:
         exit()
       
     elif menuSelect == 4:
-      f = open("Admin.csv", "r")
+      f = open("saves/Admin.csv", "r")
       f.close()
       name = "Admin"
       classType = 3
@@ -165,7 +165,7 @@ if menuSelect == 1:
             print(wrong, "Invalid Selection", b)
 
 elif menuSelect == 2:
-    f = open(fr"{namesave}.csv", "r")
+    f = open(fr"saves/{namesave}.csv", "r")
     dataIn = f.read()
     dataList = dataIn.split(",")
     classType = int(dataList[0])
@@ -442,7 +442,7 @@ def battle():
         if selection == 5:
             save = int(input("1. Save\n2. Don't Save\nMenu selection: "))
             if save == 1:
-                f = open(f"{namesave}.csv", "w")
+                f = open(f"saves/{namesave}.csv", "w")
                 f.write(str(classType) + "," + str(playerHealth) + "," + str(maxHealth) + "," + str(damage) + "," + str(count) + "," + str(dificulty) + "," + str(playerCoins) + "," + str(healPotions) + "," + Weapon1 + "," + Weapon2)
                 f.close()
                 print("Progress saved")
@@ -666,7 +666,7 @@ while True:
     print("\n")
     save = int(input("1. Save\n2. Don't Save\nMenu selection: "))
     if save == 1:
-        f = open(f"{namesave}.csv", "w")
+        f = open(f"saves/{namesave}.csv", "w")
         f.write(str(classType) + "," + str(playerHealth) + "," + str(maxHealth) + "," + str(damage) + "," + str(count) + "," + str(dificulty) + "," + str(playerCoins) + "," + str(healPotions) + "," + Weapon1 + "," + Weapon2)
         f.close()
         print("Progress saved")
@@ -680,13 +680,13 @@ while True:
   if playerHealth <= 0:
         break
       # Autosave
-  f = open(f"{namesave}.csv", "w")
+  f = open(f"saves/{namesave}.csv", "w")
   f.write(str(classType) + "," + str(playerHealth) + "," + str(maxHealth) + "," + str(damage) + "," + str(count) + "," + str(dificulty) + "," + str(playerCoins) + "," + str(healPotions) + "," + Weapon1 + "," + Weapon2)
   f.close()
     
 save = int(input("1. Save\n2. Don't Save\nMenu selection: "))
 if save == 1:
-    f = open(f"{namesave}.csv", "w")
+    f = open(f"saves/{namesave}.csv", "w")
     f.write(str(classType) + "," + str(playerHealth) + "," + str(maxHealth) + "," + str(damage) + "," + str(count) + "," + str(dificulty) + "," + str(playerCoins) + "," + str(healPotions) + "," + Weapon1 + "," + Weapon2)
     f.close()
     print("Progress saved")
