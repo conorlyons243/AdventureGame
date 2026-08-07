@@ -22,7 +22,7 @@ enemyFreeze = False
 playerStatusCount = 3
 
 while True:
-    print(Style.BRIGHT+"Welcome to ____!"+n, Fore.GREEN+"\n1. New game", Fore.YELLOW + "\n2. Load game", Fore.RED+"\n3. Exit \n(4 for admin)"+s)
+    print(Style.BRIGHT+"Welcome to a new adventure!"+n, Fore.GREEN+"\n1. New game", Fore.YELLOW + "\n2. Load game", Fore.RED+"\n3. Exit \n"+s) #(4 for admin)
     # asks for menu selection
     menuSelect = int(input("Menu selection: "))
     if menuSelect == 1:
@@ -373,6 +373,7 @@ def battle():
     while enemyHealth > 0 or playerHealth > 0:
         # Player Selection
         print("\n\n", name, "Health:", Fore.GREEN + str(playerHealth) + s, "      ", enemy, "'s Health:", Fore.RED + str(enemyHealth) + s,"\n", 39*"-", "\n 1.", Weapon1, "(75% damage chance) \n",  "2.", Weapon2, "(50% stun chance)", "\n 3.", Fore.GREEN + "Heal" + s, healPotions, "left", "\n 4. Run", "\n 5. Save and Quit")
+
         selection = int(input("What will "+ name + " do? "))
         # Damage Attack
         if selection == 1:
@@ -635,7 +636,13 @@ while True:
     choice = int(input("What option do you want: "))
     '''
 while True:
-  print("\n\nWhat should", name, "do?", "\n1.", Fore.RED + "Battle" +s, "\n2.",  Fore.YELLOW + Style.BRIGHT + "Store" +s+n, "\n3.", Fore.BLUE + "Rest"+s, "\n4.", Fore.MAGENTA + "Profile" +s, "\n5.", Fore.BLACK + "Save and Quit" +s)
+  print("\n\nWhat should", name, "do?",
+        "\n1.", Fore.RED + "Battle" +s,
+        "\n2.",  Fore.YELLOW + Style.BRIGHT + "Store" +s+n,
+        "\n3.", Fore.BLUE + "Rest"+s,
+        "\n4.", Fore.MAGENTA + "Profile" +s,
+        "\n5.", "Save and Quit")
+
   choice = int(input("Which number? "))
   if choice == 1:
         bossCheck = count % 5
